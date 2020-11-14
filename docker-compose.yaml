@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  webdav:
+    build: ./docker/webdav_nginx
+    volumes:
+      - ./files:/var/www/data
+      - ./docker/webdav_nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 10088:8080
